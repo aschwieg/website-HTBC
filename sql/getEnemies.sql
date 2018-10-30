@@ -1,0 +1,1 @@
+SELECT * FROM enemies ORDER BY rank LIMIT 5;
