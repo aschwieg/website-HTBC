@@ -3,10 +3,7 @@
 error_reporting(E_ALL);
 
 // Database Credentials
-define('DATABASE_HOST', ''); 
-define('DATABASE_USER', ''); 
-define('DATABASE_PASSWORD', ''); 
-define('DATABASE_DB', ''); 
+Test
 
 // Document Root
 define('ROOT', $_SERVER['DOCUMENT_ROOT'] . '/HTBCwebsite/'); 
