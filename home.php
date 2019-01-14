@@ -58,6 +58,26 @@ if ( isset($_GET['action']) && isset($_GET['item']) ) {
                 $enemies = $database->query($sql);
             }
             break;
+        case 'posts':
+            if ($action == 'list') {
+                $sql = get_sql('getPosts');
+                $posts = $database->query($sql);
+            }
+            else if ($action == 'add') {
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    $sql = get_sql('addPost');
+                    $params = array(
+                        'userID' => $_POST['userID'],
+                        'title' => $_POST['title'],
+                        'text' => $_POST['text'],
+                        'time' => date("Y-m-d H:i:s")
+                    );
+                    $database->executeQuery($sql, $params);
+                    header("location: home.php?action=list&item=posts");
+                    die();
+                }
+            }
+            break;
         default:   
     }  
     $myItem = ucfirst($item);

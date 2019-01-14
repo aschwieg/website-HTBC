@@ -55,6 +55,7 @@
 				<a href="home.php?action=list&item=bio">Member Bios</a> 
 				<a href="home.php?action=list&item=enemies">Public Enemies</a> 
 				<a href="home.php?action=list&item=allies">Allies</a> 
+				<a href="home.php?action=list&item=posts">Posts</a>
 				<a href="home.php?action=view&item=history">History</a>
 			<?php endif; ?>
 		</nav>
