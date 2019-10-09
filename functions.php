@@ -56,7 +56,7 @@ function snippet($string, $characters) {
 }
 
 function checkUserPermissions() {
-    if(!isset($_SESSION['user']) && !($_SERVER['REQUEST_URI'] == '/HTBCwebsite/home.php')) {
+    if(!isset($_SESSION['user']) && !($_SERVER['REQUEST_URI'] == '/home.php')) {
         header("Location: home.php");
         die();
     }

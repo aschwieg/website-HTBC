@@ -18,20 +18,20 @@ if ( isset($_GET['action']) && isset($_GET['item']) ) {
     switch($item) {
         case 'bio':
             if ($action == 'list') {
-                $sql = get_sql('getUsers');
+                $sql = get_sql('getMembers');
                 $users = $database->query($sql);
             }
             if ($action == 'get') {
-                $sql = get_sql('getUser');
+                $sql = get_sql('getMember');
                 $params = array(
-                    'userID' => $_GET['id']
+                    'user_informationID' => $_GET['id']
                 );
                 $users = $database->query($sql, $params);
                 $user = $users[0];
                 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                    $sql = get_sql('editUser');
+                    $sql = get_sql('editMember');
                     $params = array(
-                        'userID' => $_POST['userID'],
+                        'user_informationID' => $_POST['user_informationID'],
                         'quote' => $_POST['quote'],
                         'role' => $_POST['role']
                     );

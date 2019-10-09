@@ -15,7 +15,7 @@
                 </div>
                 <div class="card-body">
                     <div class="form-group float-right" style="margin-right:20px;">
-                        <input class="btn" type="submit" name="submit" value="Submit Changes">
+                        <input class="btn" type="submit" name="submit" value="Submit Changes" <?php if($_SESSION['user']->authorityLevel < 1) : ?> disabled <?php endif; ?>>
                     </div>
                     <h4 class="card-title"><?php echo ucwords($user['first_name'] . " " . $user['last_name']); ?></h4>
                     <h5 class="card-subtitle mb-2">ROLE: </h5>
@@ -26,7 +26,7 @@
                     </div>
                 </div>	
             </div>
-        <input type="hidden" value="<?php echo $_GET['id'] ?>" name="userID">
+        <input type="hidden" value="<?php echo $_GET['id'] ?>" name="user_informationID">
         </form>
         </div>
         <div class="col"></div>

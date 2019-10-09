@@ -1,23 +1,38 @@
 <div class="container"style="margin-bottom:20px">
 	<?php foreach($users as $user) : ?>
-		<div class="row justify-content-center" style="padding-top:10px;padding-bottom:30px">
-			<div class="col-md">
-				<div class="card bioCard" style="background-color:#e6e6e6">
-					<div class="card-img-top" style="background-color:#343a40;">
-						<div class="row align-items-center">
-							<img class="bioImage" src="images/<?php echo $user['first_name'] ?>.jpg" >
-							<p class="text-light bioQuote <?php if($user['quote'] == "CENSORED") {echo "text-danger";}?>">"<?php echo $user['quote'] ?>"</p>
+		<div class="row" style="padding-top:10px;padding-bottom:10px">
+			<div class="col">
+				<div class="card mb-3 <?php if($user['disciplineLevel'] > 1) : ?> border-danger <?php endif; ?>">
+					<div class="row no-gutters">
+						<div class="col-md-4">
+							<img src="images/<?php echo $user['first_name'] ?>.jpg" class="card-img" alt="<?php echo $user['first_name'] ?> ">
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<?php if($_SESSION['user']->userID != $user['userID'] && $_SESSION['user']->authorityLevel > 0) : ?>
+									<div class="float-right">
+										<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+										<a href="home.php?action=get&item=bio&id=<?php echo $user['user_informationID'] ?>">EDIT</a>
+									</div>
+									<br>
+								<?php endif; ?>
+								<h4 class="card-title"><?php echo ucwords($user['first_name'] . " " . $user['last_name']); ?> (<i><?php echo ucwords($user['role']); ?></i>)</h4>
+								<p class="card-text text-muted">"<?php echo $user['quote'] ?>"</p>
+								<p class="card-text">
+									<?php echo $user['bio'] ?>
+									<br/>
+									<?php if($_SESSION['user']->authorityLevel > 0) : ?>
+										<?php if($user['disciplineLevel'] < 3) : ?>
+											<a class="float-right text-danger" href="updateDiscipline.php?id=<?php echo $user['userID'] ?>&action=increase"><small>Increase Discipline level</small></a>
+										<?php endif; ?>
+										<?php if($user['disciplineLevel'] > 0) : ?>
+											<a class="float-left text-primary" href="updateDiscipline.php?id=<?php echo $user['userID'] ?>&action=decrease"><small>Decrease Discipline level</small></a>
+										<?php endif; ?>
+									<?php endif; ?>
+								</p>
+							</div>
 						</div>
 					</div>
-					<div class="card-body">
-						<h4 class="card-title"><?php echo ucwords($user['first_name'] . " " . $user['last_name']); ?></h4>
-						<h6 class="card-subtitle mb-2 text-muted">ROLE: <?php echo ucwords($user['role']); ?></h6>
-						<p class="card-text"><?php echo $user['bio'] ?></p>
-						<?php if($_SESSION['user']->userID != $user['userID']) : ?>
-							<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-							<a href="home.php?action=get&item=bio&id=<?php echo $user['userID'] ?>">EDIT</a>
-						<?php endif; ?>
-					</div>	
 				</div>
 			</div>
 		</div>

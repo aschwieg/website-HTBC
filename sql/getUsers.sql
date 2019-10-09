@@ -4,7 +4,8 @@ last_name,
 bio,
 role,
 quote,
-userID
+userID,
+disciplineLevel
 FROM
 users
 ORDER BY last_name

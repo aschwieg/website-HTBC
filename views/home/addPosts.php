@@ -5,17 +5,15 @@
         <form method="post">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Title: <input type="text" name="title"></h4>
+                    <h4 class="card-title" style="width:100%">Title: <input type="text" name="title"></h4>
                     <div style="margin-right:20px;margin-top:20px;">
                         <h5>Text</h5>
-                        <textarea name="text" rows="12"></textarea>
+                        <textarea name="text" rows="12" style="width:100%"></textarea>
                     </div>
-                </div>
-                <div class="form-group float-right" style="margin-right:20px;">
-                    <input class="btn" type="submit" name="submit" value="submit">
-                </div>	
+                    <input class="btn btn-secondary btn-lg" type="submit" name="Submit" value="Submit" style="margin-top:20px;">
+                </div>    
             </div>
-        <input type="hidden" value="<?php echo $_SESSION['user']->userID ?>" name="userID">
+            <input type="hidden" value="<?php echo $_SESSION['user']->userID ?>" name="userID">
         </form>
         </div>
         <div class="col"></div>

@@ -49,7 +49,7 @@ Class User {
         }
     }
     
-    static function createNewUser ($username, $password,$firstName,$lastName,$bio) {
+    static function createNewUser ($username, $password) {
         global $database;
         // Hash a new password for storing in the database.
         // The function automatically generates a cryptographically safe salt.
@@ -58,10 +58,7 @@ Class User {
         $sql = get_sql('addNewUser');
         $params = array(
             'username' => $username, 
-            'password' => $hashToStoreInDB,
-            'firstname' => $firstName,
-            'lastname' => $lastName,
-            'bio' => $bio
+            'password' => $hashToStoreInDB
         );
         $database->executeQuery($sql, $params);
     }

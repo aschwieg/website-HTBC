@@ -1,7 +1,9 @@
 <?php
 include('config.php');
 
-User::createNewUser('baldonia1', 'password','anthony','baldoni',"Affectionately referred to as 'Balboni' by fellow bespectacled member Elias 'Yogi' Lozzi, Anthony is one of the club's eight founding members. He is a sophomore at NKU and majors in wearing blue shirts to the pool. He once won the election for HTBC's 'El Presidente', although his victory was controversial as he voted for himself and rival candidate Cody Howard did not. However, Baldoni randomly resigned his position, which is now vacant. In his free time, Anthony can be found working at Wendy's. Often times, his Wendy's is frequented by fellow HTBC members, who troll him by ordering meals under his middle name 'Santino.' Baldoni's hobbies include going to Skillet concerts, playing computer games, and wearing blue shirts to the shower. One cool and unusual fact about him is that he is one of five out of eleven members of the club to have a first name that begins with the letter A.");
+User::createNewUser('fieldsj1', 'password');
+
+/*User::createNewUser('baldonia1', 'password','anthony','baldoni',"Affectionately referred to as 'Balboni' by fellow bespectacled member Elias 'Yogi' Lozzi, Anthony is one of the club's eight founding members. He is a sophomore at NKU and majors in wearing blue shirts to the pool. He once won the election for HTBC's 'El Presidente', although his victory was controversial as he voted for himself and rival candidate Cody Howard did not. However, Baldoni randomly resigned his position, which is now vacant. In his free time, Anthony can be found working at Wendy's. Often times, his Wendy's is frequented by fellow HTBC members, who troll him by ordering meals under his middle name 'Santino.' Baldoni's hobbies include going to Skillet concerts, playing computer games, and wearing blue shirts to the shower. One cool and unusual fact about him is that he is one of five out of eleven members of the club to have a first name that begins with the letter A.");
 User::createNewUser('hilsherc1', 'password','carter','hilsher',"One of the eight original founding fathers of the HTBC, Hilsher is known 
 for his lavish lifestyle and admiration of the late great Jimmy Buffet. A sophomore at NKU, he majors in 
 Rick and Morty. Out of eleven current members, Carter is the only one who does not live in the great blue
@@ -51,7 +53,7 @@ weekends. An unusual and interesting fact about Mr. Popper is that his beliefs a
 inspired well-known Chinese dictator and communist Mao Zendong, who went on to kill 45 million people.");
 User::createNewUser('stockmanb1', 'password','bethany','stockman',"I need one");
 User::createNewUser('howardc1', 'password','cody','howard',"I need one");
-User::createNewUser('poeh1', 'password','hannah','poe',"I need one");
+User::createNewUser('poeh1', 'password','hannah','poe',"I need one");*/
 
 
 ?>

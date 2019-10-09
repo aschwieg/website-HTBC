@@ -1,1 +1,1 @@
-SELECT * FROM users WHERE username = :username;
+SELECT *, PERMISSIONS.authorityLevel FROM users JOIN PERMISSIONS ON PERMISSIONS.permissionID = users.permissionID WHERE username = :username;
